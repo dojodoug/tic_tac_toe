@@ -9,3 +9,11 @@ def display
 end
 
 display
+
+def get_user_input
+  puts "To start the game please choose a location."
+  puts "Location selections should be one of the following: (A1, A2, A3, B1, B2, B3, C1, C2, or C3)."
+  input = gets.chomp.upcase
+end
+
+puts "You chose #{get_user_input}."
