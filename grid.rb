@@ -42,14 +42,6 @@ class Grid
 
   # display_board
 
-  ### GET USER SELECTION ###
-
-  def user_input
-    puts "Enter a selection."
-    puts "Location selections should be one of the following: (A1, A2, A3, B1, B2, B3, C1, C2, or C3)."
-    gets.chomp.upcase
-  end
-
   ### CHECK USER SELECTION ###
 
   def row_pick(input)
@@ -88,11 +80,14 @@ class Grid
     puts "Player 2 enter your name: "
     player2 = gets.chomp
 
+    puts "Let's play TIC TAC TOEEEÈĘË!"
+    puts "Location selections should be one of the following: (A1, A2, A3, B1, B2, B3, C1, C2, or C3)."
+
     letter = "X"
     while @board_array.any? {|sub_array| sub_array.include?(" ")} do
 
-        # puts "Enter a position!"
-        input = user_input
+        puts "Enter a position!"
+        input = gets.chomp.upcase
         update_board(input, letter) #MODIFY THIS METHOD
         display_board
 
