@@ -73,6 +73,14 @@ class Grid
     @player_array.include?(input)
   end
 
+  # def change_names(name)
+  #   if name == player1
+  #     name = player1
+  #   else
+  #     name = player2
+  #   end
+  # end
+
   def play
     puts "Player 1 enter your name: "
     player1 = gets.chomp
@@ -80,12 +88,14 @@ class Grid
     puts "Player 2 enter your name: "
     player2 = gets.chomp
 
-    puts "Let's play TIC TAC TOEEEÈĘË!"
+    puts "Let's play TIC TAC TOEEEEEEE!"
     puts "Location selections should be one of the following: (A1, A2, A3, B1, B2, B3, C1, C2, or C3)."
 
     letter = "X"
+    name = player1
     while @board_array.any? {|sub_array| sub_array.include?(" ")} do
 
+        puts "#{name}"
         puts "Enter a position!"
         input = gets.chomp.upcase
         update_board(input, letter) #MODIFY THIS METHOD
@@ -105,6 +115,13 @@ class Grid
         print @player_array
         print "\n"
       end
+
+      if name == player1
+        name = player2
+      else
+        name = player1
+      end
+
       letter = update_letter(letter)
     end
 
