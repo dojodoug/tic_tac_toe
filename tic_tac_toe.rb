@@ -10,4 +10,5 @@ require './grid'
 #
 # user_input
 
+
 Grid.new.play

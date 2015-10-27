@@ -1,7 +1,6 @@
 require 'byebug'
 
 class Grid
-  # attr_reader :board_template
 
   def initialize
     @selection_array = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"]
@@ -83,6 +82,12 @@ class Grid
   end
 
   def play
+    puts "Player 1 enter your name: "
+    player1 = gets.chomp
+
+    puts "Player 2 enter your name: "
+    player2 = gets.chomp
+
     letter = "X"
     while @board_array.any? {|sub_array| sub_array.include?(" ")} do
 
